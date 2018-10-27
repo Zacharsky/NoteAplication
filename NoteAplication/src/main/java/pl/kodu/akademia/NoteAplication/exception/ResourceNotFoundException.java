@@ -18,4 +18,16 @@ public class ResourceNotFoundException extends RuntimeException {
         this.fileValue = fileValue;
 
     }
+
+    public String getResurceName() {
+        return resurceName;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public Object getFileValue() {
+        return fileValue;
+    }
 }
