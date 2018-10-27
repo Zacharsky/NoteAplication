@@ -35,8 +35,8 @@ public class NoteController {
                 .orElseThrow(()-> new ResourceNotFoundException("Note", "id", noteId));
     }
 
-    @PostMapping("/notes/(id)")
-    public Note updadeNoteById(@PathVariable(value = "id") Long noteId, Note noteDetails){
+    @PutMapping("/notes/(id)")
+    public Note updadeNoteById(@PathVariable(value = "id") Long noteId,@Valid @RequestParam Note noteDetails){
 
         Note note = noteRepository.findById(noteId)
                 .orElseThrow(()-> new ResourceNotFoundException("Note", "id", noteId));
@@ -47,7 +47,7 @@ public class NoteController {
     }
 
     @DeleteMapping("/notes/(id)")
-    public ResponseEntity<Object> deleteNote(@PathVariable(value = "id") Long noteId){
+    public ResponseEntity deleteNote(@PathVariable(value = "id") Long noteId){
 
         Note note = noteRepository.findById(noteId)
                 .orElseThrow(()-> new ResourceNotFoundException("Note", "id", noteId));
