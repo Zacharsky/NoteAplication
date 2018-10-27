@@ -6,5 +6,4 @@ import pl.kodu.akademia.NoteAplication.model.Note;
 
 @Repository
 public interface NoteRepository extends JpaRepository<Note, Long> {
-    
 }
