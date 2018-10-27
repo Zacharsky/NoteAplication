@@ -53,6 +53,6 @@ public class NoteController {
                 .orElseThrow(()-> new ResourceNotFoundException("Note", "id", noteId));
         noteRepository.delete(note);
        return ResponseEntity.ok().build();
-
     }
+
 }
